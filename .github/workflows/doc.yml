@@ -24,6 +24,8 @@ jobs:
           npm -v
           node -v
           yarn -v
+          git config --global user.email "zhujiawei@guanmai.cn"
+          git config --global user.name "jawei"
       - run: |
           pwd
           git clone https://github.com/jaweii/ci-test.git
