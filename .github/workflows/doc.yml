@@ -19,6 +19,11 @@ jobs:
 
     # 这里定义了任务运行过程中的各个步骤
     steps:
+      - name: SSH Setup
+        uses: MrSquaare/ssh-setup-action@v1.0.1
+        with:
+          host: code.guanmai.cn
+          private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       # 环境
       - run: |
           npm -v
