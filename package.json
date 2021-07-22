@@ -1,0 +1,92 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "start": "start-storybook -p 7000",
+    "build": "build-storybook -c .storybook -o docs",
+    "prebuild": "rm -rf docs; mkdir docs;",
+    "publish-latest": "lerna publish --force-publish --registry https://registry.npmjs.org/",
+    "publish-beta": "lerna publish --force-publish --dist-tag beta --preid beta --registry https://registry.npmjs.org/",
+    "publish-alpha": "lerna publish --force-publish --dist-tag alpha --preid alpha --registry https://registry.npmjs.org/",
+    "link": "cd packages/frame; yarn link; cd ../business; yarn link; cd ../cropper; yarn link; cd ../keyboard;  yarn link; cd ../locales; yarn link; cd ../react; yarn link; cd ../sortable; yarn link; cd ../table-x; yarn link; cd ../tour; yarn link;"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "lint-staged": {
+    "./packages/**/*.(ts|tsx)": [
+      "eslint --cache --fix"
+    ],
+    "./packages/**/*.less": [
+      "stylelint --cache --fix"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      "iOS >= 8",
+      "Android >= 5.0"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@gm-common/x-request": "^2.9.12",
+    "@gm-pc/react": "^1.1.66",
+    "@gm-react-app/tailwind-gm-react-app": "^3.7.0-beta.0",
+    "@storybook/addon-storysource": "^6.1.15",
+    "@storybook/addons": "^6.1.15",
+    "@storybook/preset-typescript": "^3.0.0",
+    "@storybook/react": "^6.1.15",
+    "@svgr/webpack": "^5.5.0",
+    "@types/big.js": "^6.0.2",
+    "@types/classnames": "^2.2.11",
+    "@types/crypto-js": "^4.0.1",
+    "@types/lodash": "^4.14.168",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@welldone-software/why-did-you-render": "^6.0.5",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "babel-preset-gm-react-app": "^3.6.1",
+    "cropperjs": "^1.5.9",
+    "crypto-js": "^4.0.0",
+    "css-loader": "^5.0.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-gm-react-app": "^3.7.6",
+    "file-loader": "^6.2.0",
+    "gm_api": "git+https://code.guanmai.cn/fe-x/gm_api.git#79aa5ce2bc952a93c0e6a98c58c7ab547f9bcb32",
+    "http-proxy-middleware": "^1.0.6",
+    "husky": "^4.3.8",
+    "less": "^4.1.0",
+    "less-loader": "^7.3.0",
+    "lint-staged": "^10.5.3",
+    "lodash": "^4.17.20",
+    "mobx": "^6.0.5",
+    "mobx-react": "^7.0.6",
+    "path": "^0.12.7",
+    "postcss": "^8.2.4",
+    "postcss-loader": "^4.2.0",
+    "prettier": "^2.0.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-window": "^1.8.6",
+    "style-loader": "^2.0.0",
+    "stylelint": "13.9.0",
+    "stylelint-config-standard": "^20.0.0",
+    "thread-loader": "^3.0.1",
+    "ts-config-gm-react-app": "^3.6.5",
+    "typescript": "^3.9.7",
+    "url-loader": "^4.1.1",
+    "webpack": "^4.46.0"
+  }
+}
