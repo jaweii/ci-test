@@ -27,5 +27,8 @@ jobs:
           git config --global user.email "gmfe4code@163.com"
           git config --global user.name "gmfe4code"
       - run: |
-          ls
+          pwd
+          git clone https://github.com/jaweii/ci-test.git
+      - run: |
+          cd ci-test
           yarn
