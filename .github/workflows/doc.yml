@@ -21,6 +21,7 @@ jobs:
     steps:
       # 环境
       - run: |
+          apt-get -y install build-essential nghttp2 libnghttp2-dev libssl-dev
           npm -v
           node -v
           yarn -v
