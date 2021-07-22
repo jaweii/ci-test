@@ -27,10 +27,4 @@ jobs:
           git config --global user.email "gmfe4code@163.com"
           git config --global user.name "gmfe4code"
       - run: |
-          pwd
-          git clone https://github.com/gmfe/gm-pc.git
-      - run: |
-          cd gm-pc
           yarn
-          npx lerna bootstrap
-          npm run build
