@@ -27,4 +27,5 @@ jobs:
           git config --global user.email "gmfe4code@163.com"
           git config --global user.name "gmfe4code"
       - run: |
+          ls
           yarn
