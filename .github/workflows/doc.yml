@@ -31,7 +31,7 @@ jobs:
           yarn -v
           git config --global user.email "zhujiawei@guanmai.cn"
           git config --global user.name "jawei"
-          git config --global url.ssh://git@code.guanmai.cn/.insteadOf https://code.guanmai.cn/
+          # git config --global url.ssh://git@code.guanmai.cn/.insteadOf https://code.guanmai.cn/
       - run: |
           pwd
           git clone https://github.com/jaweii/ci-test.git
