@@ -32,13 +32,12 @@ jobs:
           npm -v
           node -v
           yarn -v
-          git config --global user.email "zhujiawei@guanmai.cn"
-          git config --global user.name "jawei"
+          # git config --global user.email "zhujiawei@guanmai.cn"
+          # git config --global user.name "jawei"
           git config --global url.ssh://git@code.guanmai.cn/.insteadOf https://code.guanmai.cn/
       - run: |
           pwd
           git clone https://github.com/jaweii/ci-test.git
       - run: |
           cd ci-test
-          rm -rf node_modules
           npm install git+https://code.guanmai.cn/fe-x/gm_api.git#79aa5ce2bc952a93c0e6a98c58c7ab547f9bcb32
