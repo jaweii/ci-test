@@ -19,11 +19,14 @@ jobs:
 
     # 这里定义了任务运行过程中的各个步骤
     steps:
-      - name: SSH Setup
-        uses: MrSquaare/ssh-setup-action@v1.0.1
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
         with:
-          host: code.guanmai.cn
-          private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          name: id_rsa # optional
+          known_hosts: code.guanmai.cn
+          if_key_exists: replace # replace / ignore / fail; optional (defaults to fail)
+
       # 环境
       - run: |
           npm -v
