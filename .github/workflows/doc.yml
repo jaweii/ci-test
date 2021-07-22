@@ -31,4 +31,4 @@ jobs:
           git clone https://github.com/jaweii/ci-test.git
       - run: |
           cd ci-test
-          yarn add git+https://code.guanmai.cn/fe-x/gm_api.git#79aa5ce2bc952a93c0e6a98c58c7ab547f9bcb32
+          npm install git+https://code.guanmai.cn/fe-x/gm_api.git#79aa5ce2bc952a93c0e6a98c58c7ab547f9bcb32
