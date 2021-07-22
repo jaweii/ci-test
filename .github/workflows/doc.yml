@@ -24,7 +24,7 @@ jobs:
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           name: id_rsa # optional
-          known_hosts: code.guanmai.cn
+          known_hosts: unnecessary
           if_key_exists: replace # replace / ignore / fail; optional (defaults to fail)
 
       # 环境
