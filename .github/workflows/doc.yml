@@ -35,8 +35,8 @@ jobs:
       - name: PRIVATE
         uses: shimataro/ssh-key-action@v2
         with:
-          key: ${{ secrets.SSH_KEY_OF_TARGET }}
-          name: id_rsa-target
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          name: id_ed25519
           known_hosts: unnecessary
           config: |                                         # will be appended to existing .ssh/config
             Host target
