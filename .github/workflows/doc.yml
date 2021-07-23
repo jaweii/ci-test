@@ -19,32 +19,20 @@ jobs:
 
     # 这里定义了任务运行过程中的各个步骤
     steps:
-      - name: Install SSH key
-        uses: shimataro/ssh-key-action@v2
       - name: PUB
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_PUB_KEY }}
           name: id_ed25519.pub
           known_hosts: unnecessary
-          config: |
-            Host bastion
-              # HostName xxx.xxx.xxx.xxx
-              # User user-of-bastion
-              IdentityFile ~/.ssh/id_ed25519.pub
+          
       - name: PRIVATE
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           name: id_ed25519
           known_hosts: unnecessary
-          config: |                                         # will be appended to existing .ssh/config
-            Host target
-              # HostName yyy.yyy.yyy.yyy
-              # User user-of-target
-              IdentityFile ~/.ssh/id_ed25519
-              # ProxyCommand ssh -W %h:%p bastion
-
+          
       # 环境
       - run: |
           npm -v
